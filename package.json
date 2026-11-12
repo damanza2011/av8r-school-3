@@ -1,8 +1,8 @@
 {
-  "name": "avia8tr-3",
+  "name": "aviator-4",
   "version": "1.0.0",
   "private": true,
-  "description": "AV8R School (AVIA8TR-3) - Bilingual welcome hub for Skool community, YouTube channels and Shopify store.",
+  "description": "AV8R School (AVIATOR-4) - Bilingual welcome hub for Skool community, YouTube channels and Shopify store.",
   "scripts": {
     "start": "npx serve -s . -l 4000",
     "dev": "npx serve -s . -l 4000"

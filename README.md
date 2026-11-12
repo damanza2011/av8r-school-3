@@ -1,4 +1,4 @@
-# AV8R School — AVIA8TR-3 (Fase 1: Portal de Bienvenida)
+# AV8R School — AVIATOR-4 (Fase 1: Portal de Bienvenida)
 
 Portal bilingüe (ES / EN) de bienvenida para **AV8R School**, diseñado para conectar a cada visitante con los tres destinos principales:
 
@@ -45,6 +45,6 @@ Coloca los dos logos oficiales dentro de `public/assets/img/`:
 
 ## Despliegue en GitHub (`damanza2011`) y Vercel (`adso-tic`)
 
-1. Sube esta carpeta al repositorio `damanza2011/AVIA8TR-3` en GitHub.
-2. En Vercel (`https://vercel.com/adso-tic`) haz clic en **Add New → Project**, importa `damanza2011/AVIA8TR-3`, deja **Framework Preset** en `Other` (sin Build Command ni Output Directory) y pulsa **Deploy**.
+1. Sube esta carpeta al repositorio `damanza2011/aviator-4` en GitHub.
+2. En Vercel (`https://vercel.com/adso-tic`) haz clic en **Add New → Project**, importa `damanza2011/aviator-4`, deja **Framework Preset** en `Other` (sin Build Command ni Output Directory) y pulsa **Deploy**.
 3. Cuando tengas acceso DNS al dominio `av8rschool.com`, entra a **Settings → Domains** en Vercel y agrega `www.av8rschool.com` y `av8rschool.com`.

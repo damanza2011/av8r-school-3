@@ -3,7 +3,7 @@
  * Edita URLs, estado de Shopify (/store), métricas y textos aquí sin tocar HTML/CSS.
  */
 export const SITE_CONFIG = {
-  version: 'AVIA8TR-3 · v2.1.0',
+  version: 'AVIATOR-4 · v1.0.0',
   release: {
     // 'phase1_welcome' = Página de bienvenida limpia lista para publicar HOY (solo lo pedido por Nestor)
     // 'full_portal'    = Activa todo el portal completo (Ruta, Programas, FAA, Comunidad, Alianzas, Chat, FAQ, Formulario)
