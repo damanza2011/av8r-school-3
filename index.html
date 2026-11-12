@@ -566,18 +566,18 @@
     <a href="#start" data-i18n="mobile.start">Destinos</a>
     <a href="#about" data-i18n="nav.about" data-section-target="about">Quiénes somos</a>
     <a href="#programs" data-i18n="mobile.courses" data-section-target="programs">Programas</a>
-    <button type="button" data-open-chat="Hola, quiero información sobre AV8R." data-i18n="mobile.chat" data-section-target="assistant">Chat</button>
+    <button type="button" data-open-chat="Hola Profesor N3570R, quiero orientación sobre AV8R School." data-i18n="mobile.chat" data-section-target="assistant">Chat N3570R</button>
   </div>
 
-  <button class="chat-fab" type="button" id="chatFab" aria-label="Abrir AV8R Guide" data-section="assistant">
+  <button class="chat-fab" type="button" id="chatFab" aria-label="Abrir Asistente Profesor N3570R" data-section="assistant">
     <span class="chat-fab__icon"><svg class="icon" aria-hidden="true"><use href="#i-plane"></use></svg></span>
-    <span class="chat-fab__text"><strong>AV8R Guide</strong><small>Skool · YouTube · FAA</small></span>
+    <span class="chat-fab__text"><strong data-i18n="chat.fabTitle">Profesor N3570R</strong><small data-i18n="chat.fabSub">IA · WhatsApp Nestor</small></span>
     <span class="chat-fab__dot"></span>
   </button>
 
-  <section class="chat-panel" id="chatPanel" aria-label="AV8R Guide" hidden data-section="assistant">
+  <section class="chat-panel" id="chatPanel" aria-label="Profesor N3570R" hidden data-section="assistant">
     <header class="chat-head">
-      <div class="chat-head__id"><span class="chat-avatar">A8</span><div><h2>AV8R Guide</h2><p><span class="pulse"></span> Online · FAA pathway</p></div></div>
+      <div class="chat-head__id"><span class="chat-avatar">NC</span><div><h2 data-i18n="chat.headTitle">Profesor N3570R</h2><p><span class="pulse"></span> <span data-i18n="chat.headStatus">Online · Asistente IA de Nestor Cadena</span></p></div></div>
       <div class="chat-head__actions">
         <div class="chat-lang" role="group" aria-label="Chat language">
           <button type="button" class="chat-lang__btn is-active" data-chat-lang="es">ES</button>
@@ -586,13 +586,19 @@
         <button type="button" class="chat-close" id="chatClose" aria-label="Cerrar chat"><svg class="icon" aria-hidden="true"><use href="#i-close"></use></svg></button>
       </div>
     </header>
+    <div class="chat-wa-direct">
+      <a class="btn btn--wa btn--sm btn--full" data-link="whatsappUrl" href="https://wa.me/15617158036" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" aria-hidden="true"><use href="#i-wa"></use></svg>
+        <span data-i18n="chat.waDirect">Hablar con Nestor por WhatsApp (+1 561 715-8036)</span>
+      </a>
+    </div>
     <div class="chat-messages" id="chatMessages" aria-live="polite"></div>
     <div class="chat-quick" id="chatQuick"></div>
     <form class="chat-form" id="chatForm">
-      <input id="chatInput" type="text" autocomplete="off" placeholder="Escribe tu pregunta..." aria-label="Escribe tu pregunta">
+      <input id="chatInput" type="text" autocomplete="off" placeholder="Pregunta al Profesor N3570R..." aria-label="Escribe tu pregunta">
       <button type="submit" aria-label="Enviar"><svg class="icon" aria-hidden="true"><use href="#i-send"></use></svg></button>
     </form>
-    <p class="chat-legal">Asistente informativo. No es la FAA ni un asesor migratorio. <a data-link="skool" href="https://skool.com/av8rschool" target="_blank" rel="noopener noreferrer">Skool AV8R</a>.</p>
+    <p class="chat-legal">Asistente educativo oficial. ¿Prefieres hablar con una persona? <a data-link="whatsappUrl" href="https://wa.me/15617158036" target="_blank" rel="noopener noreferrer">WhatsApp de Nestor Cadena</a>.</p>
   </section>
 
   <div class="modal-backdrop" id="storeModal" role="dialog" aria-modal="true" aria-labelledby="storeModalTitle" hidden>

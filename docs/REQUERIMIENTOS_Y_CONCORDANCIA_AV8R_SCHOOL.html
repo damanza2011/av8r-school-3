@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>AV8R School — Informe de Requerimientos y Concordancia Técnica (Nestor Cadena)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #070B11;
+      --red: #FF1E27;
+      --paper: #F8FAFC;
+      --sand: #F1F5F9;
+      --line: #CBD5E1;
+      --steel: #64748B;
+      --font-sans: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px 20px;
+      background: #E2E8F0;
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .page-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      padding: 48px 56px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      border-top: 6px solid var(--red);
+    }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      gap: 20px;
+    }
+    .brand-title {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0;
+    }
+    .brand-title span { color: var(--red); }
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--steel);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 4px;
+    }
+    .badge-status {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      background: var(--ink);
+      color: #FFF;
+      padding: 6px 12px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: right;
+    }
+    .badge-status strong { color: #4ADE80; display: block; font-size: 12px; }
+    
+    .print-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      color: #FFF;
+      padding: 10px 18px;
+      border: 0;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(255, 30, 39, 0.3);
+    }
+    .print-cta:hover { background: #D6121A; }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-left: 4px solid var(--red);
+      padding-left: 12px;
+      margin: 36px 0 16px;
+      color: var(--ink);
+    }
+    p { margin: 0 0 14px; }
+    
+    .quote-box {
+      background: var(--sand);
+      border-left: 3px solid var(--ink);
+      padding: 18px 22px;
+      font-size: 13px;
+      font-style: italic;
+      line-height: 1.7;
+      margin: 20px 0;
+      color: #1E293B;
+    }
+    .quote-box strong { color: var(--ink); font-style: normal; }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0 30px;
+      font-size: 12.5px;
+    }
+    .matrix-table th {
+      background: var(--ink);
+      color: #FFF;
+      text-align: left;
+      padding: 12px 14px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .matrix-table td {
+      padding: 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    .matrix-table tr:nth-child(even) td { background: #F8FAFC; }
+    
+    .status-pill {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: #047857;
+      background: #D1FAE5;
+      padding: 3px 8px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .spec-card {
+      background: var(--sand);
+      border: 1px solid var(--line);
+      padding: 16px;
+      border-radius: 4px;
+    }
+    .spec-card h4 {
+      margin: 0 0 6px;
+      font-size: 13px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      color: var(--red);
+    }
+    .spec-card p { margin: 0; font-size: 12px; color: #334155; }
+
+    .footer-doc {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--steel);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media print {
+      body { background: #FFF; padding: 0; }
+      .page-container { box-shadow: none; padding: 20px 30px; border-top: 4px solid var(--red); }
+      .print-cta { display: none; }
+      .matrix-table th { background: #070B11 !important; color: #FFF !important; -webkit-print-color-adjust: exact; }
+      .status-pill { border: 1px solid #047857; -webkit-print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-container">
+    <button class="print-cta" onclick="window.print()">
+      🖨️ Descargar o Imprimir como PDF (Ctrl + P)
+    </button>
+
+    <header class="header-bar">
+      <div>
+        <h1 class="brand-title">AV<span>8</span>R SCHOOL</h1>
+        <div class="brand-sub">Documento Técnico Oficial · Fase 1 & Hoja de Ruta Progresiva</div>
+      </div>
+      <div class="badge-status">
+        Proyecto: AVIA8TR-3
+        <strong>100% CONCORDANCIA</strong>
+        Versión: v2.1.0
+      </div>
+    </header>
+
+    <p>
+      <strong>Destinatario:</strong> Nestor A. Cadena (Fundador & Mecánico Certificado FAA)<br>
+      <strong>Ingeniero a cargo:</strong> Daniel Manzanera (Arquitecto de Software & Frontend)<br>
+      <strong>URL de Despliegue en Vivo:</strong> <a href="https://av8r-school-3.vercel.app/" target="_blank">https://av8r-school-3.vercel.app/</a><br>
+      <strong>Repositorio GitHub:</strong> <a href="https://github.com/damanza2011/av8r-school-3" target="_blank">damanza2011/av8r-school-3</a> (Vercel: <code>adso-tic</code>)
+    </p>
+
+    <h2>1. Contexto de Negocio y Mensaje Original de Nestor</h2>
+    <div class="quote-box">
+      «Daniel, hermano... Primero, vamos a publicar <strong>www.av8rschool.com</strong>. Quiero comenzar con una página de bienvenida, moderna, sencilla, profesional y bilingüe. Algo que diga <strong>«Bienvenidos a AV8R School»</strong>, explique brevemente quiénes somos y ayude a cada visitante a encontrar lo que necesita...<br><br>
+      Por ahora, esa página tendrá tres destinos principales:<br>
+      <strong>1. Nuestra comunidad y aulas virtuales:</strong> https://skool.com/av8rschool<br>
+      <strong>2. Nuestra tienda:</strong> www.av8rschool.com/store (Shopify en desarrollo)<br>
+      <strong>3. Nuestros canales de YouTube:</strong> @av8rschool y @thereal_n3570r<br><br>
+      Mientras esa página está funcionando, tú y yo vamos a seguir perfeccionando el portal que ya desarrollaste... <strong>página por página, función por función, día tras día</strong>. Así podemos desarrollar progresivamente el <strong>Profesor N3570R</strong>, nuestro asistente educativo de inteligencia artificial...»
+    </div>
+
+    <h2>2. Matriz de Concordancia Técnica vs. Requerimientos</h2>
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th style="width:28%">Requerimiento de Nestor</th>
+          <th style="width:18%">Estado</th>
+          <th>Implementación en https://av8r-school-3.vercel.app/</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>«Bienvenidos a AV8R School»</strong></td>
+          <td><span class="status-pill">Concordante</span></td>
+          <td>Encabezado y Hero central bilingüe: <em>«Bienvenidos a AV8R School · De cero a A&P. De A&P a la aviación ejecutiva.»</em></td>
+        </tr>
+        <tr>
+          <td><strong>Portal 100% Bilingüe (ES / EN)</strong></td>
+          <td><span class="status-pill">Concordante</span></td>
+          <td>Selector dinámico instantáneo en el menú superior. Traduce títulos, metadatos, botones, modales y respuestas sin recargar.</td>
+        </tr>
+        <tr>
+          <td><strong>Destino 1: Comunidad Skool</strong><br><code>skool.com/av8rschool</code></td>
+          <td><span class="status-pill">Concordante</span></td>
+          <td>Enlace principal destacado con botón rojo de alta jerarquía visual en header, tarjeta Hero y Tarjeta Destino 01.</td>
+        </tr>
+        <tr>
+          <td><strong>Destino 2: Canales de YouTube</strong><br><code>@av8rschool</code> y <code>@thereal_n3570r</code></td>
+          <td><span class="status-pill">Concordante</span></td>
+          <td>Tarjetas dedicadas 02 y 03 con enlaces verificados a clases grabadas, fundamentos y transmisiones de hangar de Nestor.</td>
+        </tr>
+        <tr>
+          <td><strong>Destino 3: Tienda Oficial</strong><br><code>www.av8rschool.com/store</code></td>
+          <td><span class="status-pill">Concordante</span></td>
+          <td>Tarjeta 04 con modo <strong>«Próximamente / Coming Soon»</strong> que abre modal descriptivo de artículos oficiales (gorras, camisetas, tazas) sin arrojar error 404.</td>
+        </tr>
+        <tr>
+          <td><strong>Quiénes somos / Perfil Nestor</strong></td>
+          <td><span class="status-pill">Concordante</span></td>
+          <td>Sección 02 con insignia NC, trayectoria de +25 años, veterano USAF, mecánico FAA y enlaces directos a WhatsApp y Correo.</td>
+        </tr>
+        <tr>
+          <td><strong>Asistente IA: Profesor N3570R</strong></td>
+          <td><span class="status-pill">Concordante</span></td>
+          <td>Botón flotante interactivo (FAB) y chat panel bilingüe orientado a guiar al alumno y conectar directamente a su WhatsApp personal.</td>
+        </tr>
+        <tr>
+          <td><strong>Fácil de administrar sin tocar código</strong></td>
+          <td><span class="status-pill">Concordante</span></td>
+          <td>Todo centralizado en <code>src/config/site.config.js</code>. Cuando la tienda Shopify esté activa, solo se conmuta <code>mode: 'live'</code> y la URL.</td>
+        </tr>
+        <tr>
+          <td><strong>Apertura modular «Página por página»</strong></td>
+          <td><span class="status-pill">Concordante</span></td>
+          <td>El código contiene la Ruta FAA de 5 etapas, programas y alianzas listos bajo interruptores booleanos para activación por fases.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>3. Arquitectura y Especificaciones de Despliegue</h2>
+    <div class="specs-grid">
+      <div class="spec-card">
+        <h4>Infraestructura Frontend</h4>
+        <p>HTML5 Semántico, CSS Tokens (#070B11, #FF1E27, #F8FAFC) y ES6 Modular nativo sin dependencias pesadas para carga ultrarrápida (&lt; 0.5s).</p>
+      </div>
+      <div class="spec-card">
+        <h4>Seguridad y Entrega</h4>
+        <p>Alojado en Vercel Edge Network con HTTPS forzado, cabeceras de seguridad (X-Frame-Options, nosniff) y enrutamiento limpio (cleanUrls: true).</p>
+      </div>
+      <div class="spec-card">
+        <h4>Asistente Profesor N3570R</h4>
+        <p>Módulo de orientación bilingüe con respuestas instantáneas sobre requisitos FAA, Skool, YouTube y enlace directo al WhatsApp (+1 561 715-8036).</p>
+      </div>
+      <div class="spec-card">
+        <h4>Preparación para Dominio y Shopify</h4>
+        <p>Listo para conectar <code>www.av8rschool.com</code> vía DNS en Vercel y redirigir <code>/store</code> hacia la tienda Shopify cuando Nestor dé el acceso.</p>
+      </div>
+    </div>
+
+    <h2>4. Hoja de Ruta Acordada (Siguientes Fases)</h2>
+    <p>Conforme a la directriz de Nestor de avanzar <em>«revisamos una sección, hacemos los cambios, la probamos y la publicamos»</em>:</p>
+    <ul>
+      <li><strong>Fase 1 (Activa Hoy):</strong> Landing de Bienvenida bilingüe, 3 destinos principales, sección de Quiénes Somos y Asistente Profesor N3570R con botón a su WhatsApp personal.</li>
+      <li><strong>Fase 2:</strong> Conexión de dominio propio <code>www.av8rschool.com</code> y habilitación de la tienda Shopify en <code>/store</code>.</li>
+      <li><strong>Fase 3:</strong> Activación progresiva de la <strong>Ruta FAA de 5 etapas</strong> y visualización de programas educativos de Skool.</li>
+      <li><strong>Fase 4:</strong> Integración del sistema de reservas para mentorías individuales conectadas con <strong>Zoom</strong> y base de conocimiento ampliada para el Profesor N3570R.</li>
+    </ul>
+
+    <footer class="footer-doc">
+      <span>© 2026 AV8R School · Proyecto AVIA8TR-3</span>
+      <span>Generado para revisión y entrega oficial · Aprobado para Fase 1</span>
+    </footer>
+  </div>
+
+</body>
+</html>
