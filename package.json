@@ -1,0 +1,12 @@
+{
+  "name": "avia8tr-3",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AV8R School (AVIA8TR-3) - Bilingual welcome hub for Skool community, YouTube channels and Shopify store.",
+  "scripts": {
+    "start": "npx serve -s . -l 4000",
+    "dev": "npx serve -s . -l 4000"
+  },
+  "author": "Nestor A. Cadena & Daniel Manzanera",
+  "license": "MIT"
+}

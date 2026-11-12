@@ -1,0 +1,25 @@
+/* ==========================================================================
+   AV8R School (AVIA8TR-3) — Design Tokens
+   Branding oficial de Nestor Cadena: Cockpit #070B11, Hangar #F8FAFC, Rojo #FF1E27
+   ========================================================================== */
+:root {
+  --ink: #070b11;
+  --ink-2: #0d131d;
+  --ink-3: #131b29;
+  --red: #ff1e27;
+  --red-2: #d6121a;
+  --red-soft: rgba(255, 30, 39, 0.14);
+  --steel: #94a3b8;
+  --steel-2: #475569;
+  --paper: #f8fafc;
+  --sand: #f1f5f9;
+  --white: #ffffff;
+  --sky: #e2e8f0;
+  --line: rgba(7, 11, 17, 0.12);
+  --line-dark: rgba(248, 250, 252, 0.14);
+  --sans: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --gutter: clamp(20px, 4vw, 48px);
+  --header: 78px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
